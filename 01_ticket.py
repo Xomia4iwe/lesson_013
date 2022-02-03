@@ -9,9 +9,7 @@
 # Подходящий шрифт искать на сайте ofont.ru
 
 
-import os
 from PIL import Image, ImageDraw, ImageFont, ImageColor
-import argparse
 
 
 def make_ticket(fio, from_, to, date, save=False):
@@ -19,10 +17,10 @@ def make_ticket(fio, from_, to, date, save=False):
     size = 15
     font = ImageFont.truetype("ofont.ru_FreeSet.ttf", size=size)
     im_txt = ImageDraw.Draw(im)
-    im_txt.text((45, 142-size), fio, font=font, fill=ImageColor.colormap['black'])
-    im_txt.text((45, 212-size), from_, font=font, fill=ImageColor.colormap['black'])
-    im_txt.text((45, 278-size), to, font=font, fill=ImageColor.colormap['black'])
-    im_txt.text((285, 278-size), date, font=font, fill=ImageColor.colormap['black'])
+    im_txt.text((45, 142 - size), fio, font=font, fill=ImageColor.colormap['black'])
+    im_txt.text((45, 212 - size), from_, font=font, fill=ImageColor.colormap['black'])
+    im_txt.text((45, 278 - size), to, font=font, fill=ImageColor.colormap['black'])
+    im_txt.text((285, 278 - size), date, font=font, fill=ImageColor.colormap['black'])
     if save == True:
         out_path = str(fio.replace('.', '')) + '.png'
         im.save(out_path)
